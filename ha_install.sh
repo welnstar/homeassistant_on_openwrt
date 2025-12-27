@@ -55,11 +55,11 @@ echo " Installing Home Assistant ${HOMEASSISTANT_VERSION} ..."
 echo "=========================================="
 
 (
-wget -q https://raw.githubusercontent.com/home-assistant/core/${HOMEASSISTANT_VERSION}/homeassistant/package_constraints.txt -O -
-wget -q https://raw.githubusercontent.com/home-assistant/core/${HOMEASSISTANT_VERSION}/requirements.txt -O -
-wget -q https://raw.githubusercontent.com/home-assistant/core/${HOMEASSISTANT_VERSION}/requirements_all.txt -O -
+wget -q https://ghfile.geekertao.top/https://raw.githubusercontent.com/home-assistant/core/${HOMEASSISTANT_VERSION}/homeassistant/package_constraints.txt -O -
+wget -q https://ghfile.geekertao.top/https://raw.githubusercontent.com/home-assistant/core/${HOMEASSISTANT_VERSION}/requirements.txt -O -
+wget -q https://ghfile.geekertao.top/https://raw.githubusercontent.com/home-assistant/core/${HOMEASSISTANT_VERSION}/requirements_all.txt -O -
 # now we can fetch nabucasa version and its deps
-wget -q https://raw.githubusercontent.com/NabuCasa/hass-nabucasa/"$(get_version hass-nabucasa)"/setup.py -O - | grep '[>=]=' | sed -E 's/\s*"(.*)",?/\1/'
+wget -q https://ghfile.geekertao.top/https://raw.githubusercontent.com/NabuCasa/hass-nabucasa/"$(get_version hass-nabucasa)"/setup.py -O - | grep '[>=]=' | sed -E 's/\s*"(.*)",?/\1/'
 ) >/tmp/ha_requirements.txt
 
 HOMEASSISTANT_FRONTEND_VERSION=$(get_version home-assistant-frontend)
